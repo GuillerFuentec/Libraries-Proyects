@@ -1,0 +1,25 @@
+:root {
+  --buttons: #8e9b90ff;
+  --bg-and-text: #93c0a4ff;
+  --contrast: #b6c4a2ff;
+  --links: #d4cdabff;
+  --containers: #dce2bdff;
+}
+
+@font-face {
+  font-family: "Savannah";
+  src: url("./media/fonts/Savannah.otf");
+}
+
+.font {
+  font-family: "Savannah", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-size: 22px;
+  margin: 0%;
+}
+
+.bg {
+  background-color: rgb(172, 223, 241);
+  min-height: 88vh;
+  max-height: auto;
+}

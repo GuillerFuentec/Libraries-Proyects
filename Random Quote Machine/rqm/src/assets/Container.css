@@ -1,0 +1,24 @@
+.cont {
+    width: 38rem; 
+    min-height: 12rem;
+    max-height: auto;
+}
+
+.vh {
+    min-height: 80vh;
+    max-height: auto;
+}
+
+.author {
+    float: right;
+}
+
+.empty {
+    display: flex;
+    width: 100%;
+    margin: 20px;
+}
+
+.pa-right {
+    padding-right: 12px;
+}

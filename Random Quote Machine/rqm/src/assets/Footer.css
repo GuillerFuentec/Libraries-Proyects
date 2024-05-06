@@ -1,0 +1,27 @@
+:root {
+  --buttons: #8e9b90ff;
+  --bg-and-text: #93c0a4ff;
+  --contrast: #b6c4a2ff;
+  --links: #d4cdabff;
+  --containers: #dce2bdff;
+}
+
+.footer {
+    margin: 0;
+  height: 50px;
+  width: 100%;
+  background-color: var(--containers);
+  -webkit-box-shadow: 0px -14px 118px 12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -14px 118px 12px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -14px 118px 12px rgba(0, 0, 0, 0.75);
+  border-top: solid 1px white;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  transition: color 0.4s ease 0s;
+  color: var(--contrast);
+}

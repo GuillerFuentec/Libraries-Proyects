@@ -1,0 +1,40 @@
+:root {
+  --buttons: #8e9b90ff;
+  --bg-and-text: #93c0a4ff;
+  --contrast: #b6c4a2ff;
+  --links: #d4cdabff;
+  --containers: #dce2bdff;
+}
+
+.navar {
+  height: 50px;
+  width: 100%;
+  background-color: var(--containers);
+  -webkit-box-shadow: 0px 10px 118px 12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 118px 12px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 118px 12px rgba(0, 0, 0, 0.75);
+  border-bottom: solid 1px white;
+}
+
+ul {
+  margin: 0;
+  display: flex;
+  justify-content: right;
+  height: 100%;
+}
+
+h6 {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  text-decoration: underline;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  transition: color 0.4s ease 0s;
+  color: var(--contrast);
+}
