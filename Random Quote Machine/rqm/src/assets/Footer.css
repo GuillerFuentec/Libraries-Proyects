@@ -7,8 +7,10 @@
 }
 
 .footer {
-    margin: 0;
-  height: 50px;
+  position: absolute;
+  bottom: 0;
+  min-height: 60px;
+
   width: 100%;
   background-color: var(--containers);
   -webkit-box-shadow: 0px -14px 118px 12px rgba(0, 0, 0, 0.75);

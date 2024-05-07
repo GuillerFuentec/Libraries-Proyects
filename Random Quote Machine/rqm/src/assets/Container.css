@@ -1,11 +1,12 @@
 .cont {
     width: 38rem; 
-    min-height: 12rem;
+    min-height: 14rem;
     max-height: auto;
+    margin-bottom: 0;
 }
 
 .vh {
-    min-height: 80vh;
+    min-height: 90.4vh;
     max-height: auto;
 }
 
