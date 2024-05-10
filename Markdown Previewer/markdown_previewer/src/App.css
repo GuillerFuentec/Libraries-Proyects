@@ -1,0 +1,38 @@
+.hd {
+  height: auto;
+  width: 550px;
+}
+
+.editor-label {
+  font-size: 18px;
+  font-weight: 500;
+  background-color: black;
+  color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* ***********PreviewMarkDown****************************** */
+
+.preview-box {
+  max-width: 800px;
+  margin: 1.125rem auto;
+  margin-top: 5vh;
+  margin-bottom: 0;
+  border: solid 1px black;
+}
+
+.title-box-pm {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  background-color: black;
+  color: aqua;
+}
+
+.preview {
+  font-size: 18px;
+  padding-left: 4px;
+  height: 250px;
+}
