@@ -16,7 +16,7 @@
   .My-Color-Theme-6-rgba { color: rgba(26, 51, 44, 1); }
   
   /* Color Theme Swatches in HSLA */
-  .My-Color-Theme-1-hsla { color: hsla(164, 41, 63, 1); }
+  .bg-box { background-color: rgb(36, 224, 174); }
   .My-Color-Theme-2-hsla { color: hsla(163, 16, 56, 1); }
   .My-Color-Theme-3-hsla { color: hsla(164, 87, 69, 1); }
   .My-Color-Theme-4-hsla { color: hsla(165, 7, 42, 1); }

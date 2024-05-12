@@ -1,0 +1,28 @@
+.Layout {
+  padding: 2rem;
+  display: flex;
+  margin: 35vh;
+  height: 35vh;
+  -webkit-box-shadow: 2px 0px 35px 9px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 0px 35px 9px rgba(0, 0, 0, 1);
+  box-shadow: 2px 0px 35px 9px rgba(0, 0, 0, 1);
+  border-radius: 1rem;
+  color: #04060d;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.display {
+  height: 3.38rem;
+  width: 77.77%;
+  background-color: #324a44;
+  color: #fce8e8;
+  -webkit-box-shadow: inset -2px 0px 36px -11px rgba(0, 245, 228, 1);
+  -moz-box-shadow: inset -2px 0px 36px -11px rgba(0, 245, 228, 1);
+  box-shadow: inset -2px 0px 36px -11px rgba(0, 245, 228, 1);
+}
