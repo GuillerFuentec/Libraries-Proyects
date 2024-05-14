@@ -5,7 +5,7 @@ export default function DrumPad() {
   
   return (
     <>
-      <div className="grid grid-cols-3 gap-4 w-7/12">
+      <div className="drumpad">
         <Button>Q</Button>
         <Button>W</Button>
         <Button>E</Button>

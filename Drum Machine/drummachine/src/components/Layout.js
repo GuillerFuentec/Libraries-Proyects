@@ -5,7 +5,7 @@ import Display from "./Display";
 
 export default function Layout({ children }) {
   return (
-    <div className="Layout mx-auto bg-box">
+    <div className="Layout bg-box">
       {children}
     </div>
   );

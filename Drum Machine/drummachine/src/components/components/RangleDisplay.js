@@ -9,7 +9,7 @@ export default function RangeDisplay() {
     }
 
     return (
-        <div className='p-px w-10/12'>
+        <div className='flex items-center p-px h-14 w-full'>
         <input type="range" min={0} max="100" value={volume} onChange={handleChange} className="range" />
         </div>
     );

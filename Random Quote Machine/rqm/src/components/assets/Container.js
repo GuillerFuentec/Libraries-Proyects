@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../../assets/Container.css";
 import { asyncQuoteRequest } from "../../utils/async";
 
-export default function Navar() {
+export default function Container() {
   const [quote, setQuote] = useState([]);
 
   useEffect(() => {

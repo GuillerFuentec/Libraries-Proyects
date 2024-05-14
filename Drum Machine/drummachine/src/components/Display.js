@@ -5,14 +5,14 @@ import Toggle from "./components/ToggleDisplay";
 export default function Display() {
   return (
     <>
-      <div className="grid grid-rows-4 gap-3 w-5/12 place-items-center">
-        <div>
+      <div className="display">
+        <div className="control">
           <LabelDisplay>Power</LabelDisplay>
           <Toggle />
         </div>
-        <div className="display"></div>
+        <div className="screen"></div>
         <RangeDisplay />
-        <div>
+        <div className="control">
           <LabelDisplay>Bank</LabelDisplay>
           <Toggle />
         </div>

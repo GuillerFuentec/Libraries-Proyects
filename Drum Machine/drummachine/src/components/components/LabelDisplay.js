@@ -1,3 +1,3 @@
 export default function LabelDisplay({children}) {
-  return <label>{children}</label>;
+  return <label className="mx-auto">{children}</label>;
 }
