@@ -3,6 +3,8 @@
   .My-Color-Theme-1-hex { color: #7DC9B5; }
   .My-Color-Theme-2-hex { color: #7DA197; }
   .My-Color-Theme-3-hex { color: #6EF5D1; }
+  /* Color Theme Contrast in Hex */
+  .constrast-bg-box { background-color: #FF6347; }
   .My-Color-Theme-4-hex { color: #647571; }
   .My-Color-Theme-5-hex { color: #324A44; }
   .My-Color-Theme-6-hex { color: #1A332C; }

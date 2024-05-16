@@ -1,77 +1,228 @@
 #root {
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .Layout {
   position: relative;
   width: 660px;
+  height: 330px;
   text-align: center;
-  height: auto;
-  background-color: #b3b3b3;
-  -webkit-box-shadow: 2px 0px 35px 9px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 2px 0px 35px 9px rgba(0, 0, 0, 1);
-  box-shadow: 2px 0px 35px 9px rgba(0, 0, 0, 1);
   border-radius: 1rem;
-  color: #04060d;
+  /* bg gradient color */
+  background: rgba(45, 78, 240, 1);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(45, 78, 240, 1) 0%,
+    rgba(45, 78, 240, 1) 5%,
+    rgba(198, 42, 212, 0.97) 26%,
+    rgba(235, 17, 115, 0.95) 46%,
+    rgba(235, 20, 97, 0.95) 50%,
+    rgba(233, 32, 22, 0.95) 67%,
+    rgba(249, 82, 67, 0.95) 93%
+  );
+  background: -webkit-gradient(
+    left bottom,
+    right top,
+    color-stop(0%, rgba(45, 78, 240, 1)),
+    color-stop(5%, rgba(45, 78, 240, 1)),
+    color-stop(26%, rgba(198, 42, 212, 0.97)),
+    color-stop(46%, rgba(235, 17, 115, 0.95)),
+    color-stop(50%, rgba(235, 20, 97, 0.95)),
+    color-stop(67%, rgba(233, 32, 22, 0.95)),
+    color-stop(93%, rgba(249, 82, 67, 0.95))
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(45, 78, 240, 1) 0%,
+    rgba(45, 78, 240, 1) 5%,
+    rgba(198, 42, 212, 0.97) 26%,
+    rgba(235, 17, 115, 0.95) 46%,
+    rgba(235, 20, 97, 0.95) 50%,
+    rgba(233, 32, 22, 0.95) 67%,
+    rgba(249, 82, 67, 0.95) 93%
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(45, 78, 240, 1) 0%,
+    rgba(45, 78, 240, 1) 5%,
+    rgba(198, 42, 212, 0.97) 26%,
+    rgba(235, 17, 115, 0.95) 46%,
+    rgba(235, 20, 97, 0.95) 50%,
+    rgba(233, 32, 22, 0.95) 67%,
+    rgba(249, 82, 67, 0.95) 93%
+  );
+  background: -ms-linear-gradient(
+    45deg,
+    rgba(45, 78, 240, 1) 0%,
+    rgba(45, 78, 240, 1) 5%,
+    rgba(198, 42, 212, 0.97) 26%,
+    rgba(235, 17, 115, 0.95) 46%,
+    rgba(235, 20, 97, 0.95) 50%,
+    rgba(233, 32, 22, 0.95) 67%,
+    rgba(249, 82, 67, 0.95) 93%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(45, 78, 240, 1) 0%,
+    rgba(45, 78, 240, 1) 5%,
+    rgba(198, 42, 212, 0.97) 26%,
+    rgba(235, 17, 115, 0.95) 46%,
+    rgba(235, 20, 97, 0.95) 50%,
+    rgba(233, 32, 22, 0.95) 67%,
+    rgba(249, 82, 67, 0.95) 93%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d4ef0', endColorstr='#f95243', GradientType=1 );
+
+  /* Box Shadow */
+  -webkit-box-shadow: -1px 0px 46px 4px rgba(255, 99, 71, 0.84);
+  -moz-box-shadow: -1px 0px 46px 4px rgba(255, 99, 71, 0.84);
+  box-shadow: -1px 0px 46px 4px rgba(255, 99, 71, 0.84);
 }
 
-.drumpad {
-  width: 332px;
-  height: 272px;
-  display: inline-block;
-  margin: 20px;
+.Pad-Buttons {
+  background-color: #000;
+  color: var(--bg-box);
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 4px;
+  /* Box Shadow */
+  -webkit-box-shadow: -6px -3px 20px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -6px -3px 20px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -6px -3px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
-.display {
-  width: 240px;
-  height: 272px;
-  display: inline-block;
-  margin: 40px 20px 0 10px;
-  vertical-align: top;
+.Pad-Buttons:active {
+  animation: scaleAnimation 0.4s ease;
 }
 
-.drum-buttons {
-  position: relative;
-  float: left;
-  width: 100px;
-  height: 80px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  padding: 35px;
-  box-sizing: border-box;
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.86);
+  }
 }
 
-.control {
-  width: 100px;
-  margin: auto;
+@media screen and (max-width: 654px) {
+  .Layout {
+    transform: scale(0.7);
+  }
+
+  .pad {
+    transform: scale(1);
+  }
+}
+[type="range"] {
+  margin: 12.5px 0;
+  width: 100%;
+}
+[type="range"]:focus {
+  outline: none;
+}
+[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  background: #424242;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+[type="range"]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #111, 0 0 1px #1e1e1e;
+  border: 0 solid #fff;
+  height: 25px;
+  width: 8px;
+  border-radius: 0;
+  background: blue;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
+}
+[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #4f4f4f;
+}
+[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  background: #424242;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+[type="range"]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #111, 0 0 1px #1e1e1e;
+  border: 0 solid #fff;
+  height: 25px;
+  width: 8px;
+  border-radius: 0;
+  background: blue;
+  cursor: pointer;
+}
+[type="range"]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  border-color: transparent;
+  border-width: 8px 0;
+  color: transparent;
+}
+[type="range"]::-ms-fill-lower {
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  background: #353535;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+[type="range"]::-ms-fill-upper {
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  background: #424242;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+[type="range"]::-ms-thumb {
+  box-shadow: 1px 1px 1px #111, 0 0 1px #1e1e1e;
+  border: 0 solid #fff;
+  height: 25px;
+  width: 8px;
+  border-radius: 0;
+  background: blue;
+  cursor: pointer;
+}
+[type="range"]:focus::-ms-fill-lower {
+  background: #424242;
+}
+[type="range"]:focus::-ms-fill-upper {
+  background: #4f4f4f;
 }
 
-.inner-display {
-  width: 200px;
-  background-color: gray;
-  margin: 15px auto;
-  padding: 15px;
-  box-sizing: border-box;
+@media screen and (max-width: 413px) {
+  .Pad-Buttons {
+    height: 4.4rem;
+  }
+
+  .Layout {
+    height: 290px;
+  }
 }
 
-.screen {
-  width: 88.88%;
-  padding: 1rem;
-  margin: 1rem;
-  background-color: #324a44;
-  color: #fce8e8;
-  -webkit-box-shadow: inset -2px 0px 36px -11px rgba(0, 245, 228, 1);
-  -moz-box-shadow: inset -2px 0px 36px -11px rgba(0, 245, 228, 1);
-  box-shadow: inset -2px 0px 36px -11px rgba(0, 245, 228, 1);
-}
+@media screen and (max-width: 391px) {
+  .Pad-Buttons {
+    height: 3.6rem;
+  }
 
-label {
-  display: block;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
+  .Layout {
+    height: 290px;
+  }
 }
