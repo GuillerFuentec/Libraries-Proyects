@@ -3,7 +3,7 @@ import Display from "./Display";
 
 export default function Layout() {
   return (
-    <div className="Layout grid grid-cols-2 constrast-bg-box">
+    <div id="drum-machine" className="Layout grid grid-cols-2 constrast-bg-box">
       <DrumPad />
       <Display />
     </div>

@@ -82,7 +82,7 @@
   box-shadow: -1px 0px 46px 4px rgba(255, 99, 71, 0.84);
 }
 
-.Pad-Buttons {
+.drum-pad {
   background-color: #000;
   color: var(--bg-box);
   font-size: 1.3rem;
@@ -120,7 +120,7 @@ label {
   box-shadow: inset 0px 0px 6px 0px rgba(255, 99, 71, 1);
 }
 
-.Pad-Buttons:active {
+.drum-pad:active {
   animation: scaleAnimation 0.4s ease;
 }
 
@@ -148,7 +148,7 @@ label {
 }
 
 @media screen and (max-width: 413px) {
-  .Pad-Buttons {
+  .drum-pad {
     height: 4.4rem;
   }
 
@@ -158,7 +158,7 @@ label {
 }
 
 @media screen and (max-width: 391px) {
-  .Pad-Buttons {
+  .drum-pad {
     height: 3.6rem;
   }
 
