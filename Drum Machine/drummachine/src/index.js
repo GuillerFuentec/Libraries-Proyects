@@ -3,18 +3,18 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Provider, useStore } from "react-redux";
+// import { Provider, useStore } from "react-redux";
 
-const store =  useStore({
-  
-})
+// const store =  {
+//   num: 0,
+// }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode store={store}>
-    <Provider >
+  <React.StrictMode >
+    {/* <Provider store={store}> */}
       <App />
-    </Provider>
+    {/* </Provider> */}
   </React.StrictMode>
 );
 
