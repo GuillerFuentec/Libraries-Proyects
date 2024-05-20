@@ -1,17 +1,24 @@
-
-import {useState} from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
 export default function RangeDisplay() {
-    const [volume, setVolume] = useState(40);
+  let volume = useSelector((state) => state.volume);
+  const dispatch = useDispatch();
 
-    const handleChange = (e) => {
-        setVolume(e.target.value);
-    }
+  const handleChange = (e) => {
+    const newVolume = Number(e.target.value);
+    dispatch({ type: "SET/VOLUME", payload: newVolume });
+  };
 
-    return (
-        <div className='flex items-center p-px h-14 w-full'>
-        <input type="range" min={0} max="100" value={volume} onChange={handleChange} className="range range-sm" />
-        </div>
-    );
-  }
-  
+  return (
+    <div className="flex items-center p-px h-14 w-full">
+      <input
+        type="range"
+        min={0}
+        max="100"
+        value={volume}
+        onChange={handleChange}
+        className="range range-sm"
+      />
+    </div>
+  );
+}

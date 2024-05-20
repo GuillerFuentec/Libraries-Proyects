@@ -1,31 +1,37 @@
 import { combineReducers } from "redux";
-// import Display from "../Display";
-// import { songs } from "./ButtonCreator";
 
-const powerReducer = (state = true, action) => {
-    switch (action) {
-        case 'SET/POWER':
-            // return state !== state;
-            break;
-    
-        default:
-            return state;
-    }
-}
+const setPower = (state = false, action) => {
+  switch (action.type) {
+    case "SET/POWER":
+      return { state: action.payload };
+    default:
+      return state;
+  }
+};
 
-export const displayReducer = (state = "Press any key", action) => {
-    switch (action) {
-        case 'SET/DISPLAY':
-            return action.payload ;
-    
-        default:
-            return state;
-    }
-}
+const setDisplay = (state = "Press any key", action) => {
+  switch (action.type) {
+    case "SET/DISPLAY":
+      return action.payload;
+
+    default:
+      return state;
+  }
+};
+
+const setVolume = (state = 30, action) => {
+  switch (action.type) {
+    case "SET/VOLUME":
+      return action.payload;
+
+    default:
+      return state;
+  }
+};
 
 export const reducer = combineReducers({
-    power: powerReducer,
-    display: displayReducer,
-    volume: 40,
-    bank: 0,
+  power: setPower,
+  display: setDisplay,
+  volume: setVolume,
+  bank: 0,
 });

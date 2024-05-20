@@ -110,7 +110,7 @@ label {
 }
 
 .screen {
-  display: inline-block;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #2f2f2f;
@@ -120,14 +120,20 @@ label {
   box-shadow: inset 0px 0px 6px 0px rgba(255, 99, 71, 1);
 }
 
-.drum-pad:active, .active {
+.screen span {
+  display: inline-block;
+  color: var(--bg-box);
+  font-weight: bolder;
+}
+
+.drum-pad:active,
+.active {
   animation: scaleAnimation 0.4s ease;
 }
 
 .parent-active {
   animation: scaleAnimation 0.4s ease-in-out;
 }
-
 
 @keyframes scaleAnimation {
   0% {
@@ -169,7 +175,6 @@ label {
   .Layout {
     height: 290px;
   }
-
 }
 
 input[type="range"]::-webkit-slider-thumb {
