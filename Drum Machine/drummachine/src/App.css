@@ -120,8 +120,12 @@ label {
   box-shadow: inset 0px 0px 6px 0px rgba(255, 99, 71, 1);
 }
 
-.drum-pad:active {
+.drum-pad:active, .active {
   animation: scaleAnimation 0.4s ease;
+}
+
+.parent-active {
+  animation: scaleAnimation 0.4s ease-in-out;
 }
 
 
