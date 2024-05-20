@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8d75266f.css",
+    "main.js": "/static/js/main.b8caac73.js",
+    "static/js/453.04202b8b.chunk.js": "/static/js/453.04202b8b.chunk.js",
+    "static/media/Savannah.otf": "/static/media/Savannah.beb091ffd80a9640b019.otf",
+    "index.html": "/index.html",
+    "main.8d75266f.css.map": "/static/css/main.8d75266f.css.map",
+    "main.b8caac73.js.map": "/static/js/main.b8caac73.js.map",
+    "453.04202b8b.chunk.js.map": "/static/js/453.04202b8b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d75266f.css",
+    "static/js/main.b8caac73.js"
+  ]
+}

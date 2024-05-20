@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b9ffec;
+  padding: 2rem;
+}
+
+pre > code {
+  padding: 0.2rem;
+  background-color: black !important;
+  color: #fff;
+}
+
+code {
+  padding: 0.3rem;
+  background-color: #fee;
+  color: black;
+}
+
+.cont {
+  justify-content: center;
+  width: 70%;
+}
+
+.hd {
+  width: 100%;
+  max-width: 550px;
+}
+
+.editor-label {
+  font-size: 18px;
+  font-weight: 500;
+  background-color: black;
+  color: #fff;
+  box-sizing: content-box;
+  width: 100%;
+  margin-bottom: 0;
+  
+}
+
+.form-control {
+  height: 400px;
+}
+
+/* ***********PreviewMarkDown****************************** */
+
+.p-0 {
+  padding: 0;
+}
+
+.h2-preview {
+  display: inline-block;
+  background-color: black;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card-p {
+  padding: 30rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#preview {
+  padding: 1.24rem;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  transition: color 0.4s ease 0s;
+  color: var(--contrast);
+}
+
+h6 {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
