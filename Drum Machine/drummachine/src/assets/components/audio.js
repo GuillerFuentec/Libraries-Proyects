@@ -1,20 +1,19 @@
-import { useEffect, useRef, createRef } from "react";
-import Button from "../components/Button";
-import { songs, letters } from "./data/data";
+import { songs, bank, letters } from "../utils/data/data";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useRef } from "react";
 
-export default function ButtonGeneretor() {
+export default function Audio({ index,...props }) {
   const audioRefs = useRef([]);
   const dispatch = useDispatch();
+  // handle Volume
   const volume = useSelector((state) => state.volume);
+  // handle power
   const muted = useSelector((state) => state.power);
-  const { state } = muted;
-
-  // Selecciona el estado de bank de la tienda Redux
-  const bankState = useSelector((state) => state.bank.state);
-
-  // Usa el estado de bank para seleccionar el banco de canciones apropiado
-  const songs_0 = songs[bankState ? 1 : 0];
+  const { state, _payload } = muted;
+  // Handle Bank
+  const changeBank = useSelector((state) => state.bank);
+  const { _state = false } = changeBank;
+  const numberBank = state ? 1 : 0;
 
   const playAudio = (index) => {
     const audioElement = audioRefs.current[index]?.current;
@@ -37,7 +36,7 @@ export default function ButtonGeneretor() {
       audioElement
         .play()
         .then(() => {
-          let songName = songs_0[index].name;
+          let songName = songs[index].name;
 
           dispatch({ type: "SET/DISPLAY", payload: songName });
         })
@@ -45,10 +44,6 @@ export default function ButtonGeneretor() {
           console.error("Error al reproducir el audio:", error)
         );
     }
-  };
-
-  const handleClick = (index) => {
-    playAudio(index);
   };
 
   useEffect(() => {
@@ -62,35 +57,16 @@ export default function ButtonGeneretor() {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => window.removeEventListener("keydown", handleKeyDown);
-  });
+  }, [volume]);
 
   return (
-    <>
-      {songs_0.map((item, index) => {
-        if (!audioRefs.current[index]) {
-          audioRefs.current[index] = createRef();
-        }
-
-        return (
-          <Button
-            id={songs_0[index].song}
-            key={index}
-            onClick={() => handleClick(index)}
-          >
-            <audio
-              id={letters[index]}
-              className="clip"
-              // Usa bankState para construir la ruta del archivo de audio
-              src={`../media/audio/music/zelda/bank_${bankState ? 2 : 1}/${
-                songs_0[index].song
-              }`}
-              ref={audioRefs.current[index]}
-              muted={state}
-            />
-            {letters[index]}
-          </Button>
-        );
-      })}
-    </>
+    <audio
+      {...props}
+      id={letters[index]}
+      className="clip"
+      src={`../media/audio/music/zelda/bank_${bank[numberBank]}/${songs[index].song}`}
+      ref={audioRefs.current[index]}
+      muted={state}
+    />
   );
 }

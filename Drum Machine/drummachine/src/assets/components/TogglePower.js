@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import LabelDisplay from "./LabelDisplay";
 
-export default function ToggleDisplay() {
+export default function TogglePower() {
   const power = useSelector((state) => state.power);
   const {state = false} = power;
   const dispatch = useDispatch();
-  const setDefaul = state ? 'OFF' : 'ON'
+  const setPower = state ? 'OFF' : 'ON'
   return (
     <>
-      <LabelDisplay>POWER/{setDefaul}</LabelDisplay>
+      <LabelDisplay>POWER/{setPower}</LabelDisplay>
       <input
         type="checkbox"
-        className="toggle [--tglbg:black] "
+        className="toggle [--tglbg:white] opacity-20"
         checked={state}
         onChange={() => dispatch({ type: "SET/POWER", payload: !state })}
       />
