@@ -1,0 +1,98 @@
+@font-face{
+  font-family: 'digital7';
+  src: url('./media/fonts/digital-7.ttf') format('ttf');
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  height: auto;
+  margin: 140px auto;
+  align-items: center;
+}
+
+.layout {
+  display: flexbox;
+  height: auto;
+  padding: 4px;
+  border: solid 1px black;
+  width: 340px;
+  margin: auto;
+  align-content: center;
+  align-items: center;
+}
+
+.display{
+  display: flexbox;
+  height: 70px;
+  width: 99%;
+  border: solid 1px black;
+  margin: 4px auto 2px auto;
+  font-family: 'digital7';
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.realtime {
+  position: relative;
+  border: solid 1px black;
+  height: 20px;
+  margin: 4px;
+}
+
+.realtime span {
+  position: absolute; /* Permite posicionar el texto dentro del contenedor */
+  right: 3px; /* Alinea el texto a la derecha */
+  bottom: 1px; /* Alinea el texto en la parte inferior */
+}
+
+.operation {
+  position: relative;
+  border: solid 1px black;
+  height: 30px;
+  margin: 4px;
+}
+
+.operation span {
+  position: absolute; /* Permite posicionar el texto dentro del contenedor */
+  right: 3px; /* Alinea el texto a la derecha */
+  bottom: 2px; /* Alinea el texto en la parte inferior */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1px;
+}
+
+.button {
+  background-color: #666;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:active {
+  background-color: #888;
+}
+
+#clear {
+  grid-column: span 2;
+  background-color: #e74c3c;
+}
+
+#equals {
+  grid-row: span 2;
+  background-color: #3498db;
+}
+
+#zero {
+  grid-column: span 2;
+}
