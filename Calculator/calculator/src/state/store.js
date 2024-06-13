@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { reducer } from "./reducers/reducers";
+import { calculatorReducer } from "./reducers/reducers";
 
 export const store = configureStore({
-    reducer
-});
+    reducer: {
+      calculatorReducer: calculatorReducer,
+    },
+  });

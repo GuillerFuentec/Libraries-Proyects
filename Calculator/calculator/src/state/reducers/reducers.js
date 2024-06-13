@@ -1,42 +1,126 @@
-const sumar = (state = false, action) => {
+import {
+  ADD,
+  CLEAR,
+  DIVIDE,
+  EQUALS,
+  MULTIPLY,
+  SUBTRACT,
+  INPUT_DECIMAL,
+  INPUT_NUMBER,
+} from "./actions/actions";
+
+const initialState = {
+  displayValue: "0",
+  operator: null,
+  previousValue: null,
+  waitingForNewValue: false,
+};
+
+export const calculatorReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SUMAR":
-      return { state: state + action.payload };
+    case CLEAR:
+      return {
+        displayValue: "0",
+        operator: null,
+        previousValue: null,
+        waitingForNewValue: false,
+      };
+    case ADD:
+      if (state.waitingForNewValue) {
+        return { ...state, operator: "+" };
+      } else {
+        return {
+          ...state,
+          previousValue: state.displayValue,
+          displayValue: "0",
+          waitingForNewValue: true,
+          operator: "+",
+        };
+      }
+    case SUBTRACT:
+      if (state.waitingForNewValue) {
+        return { ...state, operator: "-" };
+      } else {
+        return {
+          ...state,
+          previousValue: state.displayValue,
+          displayValue: "0",
+          waitingForNewValue: true,
+          operator: "-",
+        };
+      }
+    case MULTIPLY:
+      if (state.waitingForNewValue) {
+        return { ...state, operator: "*" };
+      } else {
+        return {
+          ...state,
+          previousValue: state.displayValue,
+          displayValue: "0",
+          waitingForNewValue: true,
+          operator: "*",
+        };
+      }
+    case DIVIDE:
+      if (state.waitingForNewValue) {
+        return { ...state, operator: "/" };
+      } else {
+        if (state.displayValue === "0") {
+          return { ...state, displayValue: "∞", waitingForNewValue: true };
+        }
+        const newValue = state.previousValue
+          ? eval(
+              `${state.previousValue} ${state.operator} ${state.displayValue}`
+            )
+          : state.displayValue;
+        return {
+          ...state,
+          previousValue: newValue,
+          displayValue: "0",
+          waitingForNewValue: true,
+          operator: "/",
+        };
+      }
+    case EQUALS:
+      if (state.waitingForNewValue && state.operator) {
+        if (state.operator === "/" && state.displayValue === "0") {
+          return { ...state, displayValue: "∞", waitingForNewValue: true };
+        }
+        const newValue = eval(
+          `${state.previousValue} ${state.operator} ${state.displayValue}`
+        );
+        return {
+          ...state,
+          displayValue: String(newValue),
+          previousValue: null,
+          waitingForNewValue: false, // Cambia a false para mantener el resultado en la pantalla
+          operator: null,
+        };
+      } else if (!state.waitingForNewValue) {
+        return state;
+      }
+      break;
+    case INPUT_NUMBER:
+      if (state.displayValue === "∞") {
+        return {
+          ...initialState,
+          displayValue: String(action.payload),
+        };
+      } else {
+        return {
+          ...state,
+          displayValue:
+            state.displayValue === "0"
+              ? String(action.payload)
+              : state.displayValue + String(action.payload),
+        };
+      }
+    case INPUT_DECIMAL:
+      if (!state.displayValue.includes(".")) {
+        return { ...state, displayValue: state.displayValue + "." };
+      }
+      break;
     default:
       return state;
   }
-};
-
-const restar = (state = false, action) => {
-  switch (action.type) {
-    case "RESTAR":
-      return { state: state - action.payload };
-    default:
-      return state;
-  }
-};
-
-const dividir = (state = false, action) => {
-  switch (action.type) {
-    case "DIVIDIR":
-      return { state: state / action.payload };
-    default:
-      return state;
-  }
-};
-
-const multiplicar = (state = false, action) => {
-  switch (action.type) {
-    case "MULTIPLICAR":
-      return { state: state * action.payload };
-    default:
-      return state;
-  }
-};
-
-export const reducer = {
-  sumar: sumar,
-  restar: restar,
-  dividir: dividir,
-  multiplicar: multiplicar,
 };
