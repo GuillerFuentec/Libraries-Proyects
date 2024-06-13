@@ -59,7 +59,7 @@ code {
 }
 
 .card-p {
-  padding: 30rem;
+  padding: 15rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -81,4 +81,41 @@ h6 {
   display: inline-block;
   width: 100%;
   text-align: center;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .cont {
+    width: 90%;
+  }
+
+  .hd {
+    max-width: 100%;
+  }
+
+  .form-control {
+    height: auto;
+  }
+
+  .card-p {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  .cont {
+    width: 90%;
+  }
+
+  .hd {
+    max-width: 100%;
+  }
+
+  .form-control {
+    height: auto;
+  }
+
+  .card-p {
+    padding: 2rem;
+  }
 }
